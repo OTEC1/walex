@@ -1,0 +1,445 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	  xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+<title>WalaxFabrics</title>
+
+			<link rel="icon" href="image/back.jpg" sizes="40x40" type="image/png"/>
+	
+  <!--Sweet alert-->
+       <script  type="text/javascript"  src="folder1/bootstrap.js"/>
+        <script  type="text/javascript"  src="folder1/bootstrap.min.js"/>     
+        <script src="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css"/>
+        
+        
+        
+        
+<style>
+
+		*{
+		padding: 0px;
+		margin: 0px;
+		}
+		
+		
+		.base{
+		background: #ECECEC;
+		width:100%;
+		text-align: center;
+		}
+		
+		
+		
+		
+		
+		.inner_section{
+		display:inline-block;
+		background: #fff;
+		width:90%;
+		}
+		
+		.up_sec{
+		     float:left;
+			width:45%;
+			height:500px;
+	    	background:#ECECEC;
+			border-radius: 7px 0px 0px 7px;
+			}
+			
+		.view_order{
+		   float:left;
+			width:45%;
+			height:500px;
+			background:#ECECEC;
+			border-radius: 0px 7px 7px 0px;
+			}
+			
+			.spa{
+		    	margin-left:110px; 
+				}
+			
+	
+			
+		.upload-so{
+				width: 100px;
+				padding: 5px;
+				border:none;
+				border-radius: 5px;
+				color:#fff;
+				background-color: #2ED9EC;
+					
+				}
+
+		.price{
+				width: 250px;
+				height: 10px;
+				border:none;
+				border-radius:10px;
+				padding: 10px;
+			}
+			
+			
+		.select{
+			width: 200px;
+			
+			}			
+			
+			.cats{
+				margin-right:20px;
+				width:130px;
+				float: right;
+				}
+			
+			.pics{
+					width: 140px;
+						
+				}
+			
+		
+	
+    	.top_nav{
+		background: #E59327;
+		width:100%;
+		height: 100px;
+		
+		}
+		
+		.headers{
+			padding:10px;
+			color: #fff;
+			font-size: 40px;
+			background-color: #E59327;
+			border:none;
+				cursor: pointer;
+			}
+
+		.headers1{
+	    	border: 2px solid #000;
+	    	border-radius: 5px;
+	    	margin: 10px;
+			float:right;
+			padding:15px;
+			color: #000;
+			font-size: 15px;
+			}
+
+		.headers2{
+		    height:30px;
+		    width:30px;
+	    	margin: 10px;
+			float:right;
+			padding:15px;
+			color: #000;
+			font-size: 15px;
+			}
+		hr{
+	    	width:70%;
+	    	margin-top:5px;
+	    	margin-left: 15%;
+		}
+		
+		.jats{
+		  padding: 5px;
+		  border: 2px solid #000;
+		  border-radius: 5px;
+			}
+			
+			
+			.boxes{
+			width: 80%;
+			align-content:center;
+			background-color:#ECECEC;
+			border-radius: 10px;
+			box-shadow: 0px 0px 5px 5px rgba(0,0,0.3);
+			}
+			
+			
+			       .Tcrollbar{ 
+                    overflow: scroll;
+                    height:370px;
+                    width:90%;
+                    overflow-y:scroll;
+                    overflow-x:hidden;
+                   }
+
+
+                  #style-2::-webkit-scrollbar{
+                  width: 7px;
+                  }
+
+               
+                 #style-2::-webkit-scrollbar-thumb{
+                  background-color: #E59327;
+                  border-radius: 5px;
+                  margin-right: 10px;
+                  }
+
+                  .Torce-overflow{
+                   min-height: 450px;
+                    }
+
+
+
+
+
+
+
+
+
+ @media(max-width:980px)    { 
+		*{
+		padding: 0px;
+		margin: 0px;
+		}
+		
+	
+		.base{
+		width:100%;
+		font-size: 35px;
+		}
+		
+		
+			.headers2{
+		    height:50px;
+		    width:50px;
+	    	margin: 10px;
+			float:right;
+			padding:15px;
+			color: #000;
+			font-size: 15px;
+			}
+		
+		.inner_section{
+		display:inline-block;
+		width:95%;
+		}
+		
+		
+		
+		.up_sec{
+			float:left;
+			width:95%;
+			height:800px;
+			background:#ECECEC;
+			margin-bottom:10px;
+			border-radius: 7px 0px 0px 7px;
+			}
+			
+		.view_order{
+			float:left;
+			width:95%;
+			height:800px;
+			background:#ECECEC;
+			margin-bottom:10px;
+			border-radius: 0px 7px 7px 0px;
+			}
+			
+		.upload-so{
+		       width: 180px;
+				padding:25px;
+				font-size:32px;
+				background-color: #2ED9EC;
+				
+			}
+
+		.price{
+				width: 250px;
+				height: 30px;
+				border:none;
+				border-radius:10px;
+				padding: 10px;
+			}
+			
+			
+			
+			
+			.cats{
+				margin-right:20px;
+				width:130px;
+				float: right;
+				}
+			
+			.pics{
+					width: 140px;
+						
+				}
+
+ 		.top_nav{
+			background: #E59327;
+			height: 100px;
+			}
+			
+				.headers{
+			padding:10px;
+			color: #fff;
+			font-size: 30px;
+			background-color: #E59327;
+			border:none;
+				cursor: pointer;
+			}
+			.headers1{
+			border: 2px solid #000;
+	    	border-radius: 5px;
+	    	margin: 10px;
+			float:right;
+			padding:15px;
+			color: #000;
+			font-size: 15px;
+			}
+			
+			.spa{
+		   	margin-left:2%; 
+			}
+	
+				.upload-so{
+				width: 150px;
+				padding: 15px;
+				}
+				
+			.select{
+				height:50px;
+			      width: 250px;
+			      font-size: 32px;
+			
+			}	
+			
+			.headers1{
+			font-size: 30px;
+			padding: 20px;
+			}
+}
+
+
+
+
+
+</style>
+</h:head>
+
+<h:body>
+				<div class="top_nav">
+					
+					<h:form>
+					<h:commandButton    class="headers" value="WalexFabrics Control Panel"    action="#{update_sec.home}"/>
+				
+					 <h:commandButton  id="wer"    class="headers1"     value="Notification #{notifications.noti}" 
+					   action="#{downloadSsec.view_sub_noti}">
+						<p:poll    update="wer"     listener="#{notifications.read_noti}"/>
+					</h:commandButton>
+					
+					 <h:commandButton    class="headers2"     image="folder1/user.png"  action="#{downloadSsec.sign_in}"/>
+					 
+					</h:form>
+					
+					</div>
+				
+						<div  class="base">
+								<div   class="inner_section">
+						
+								<div   class="spa">
+								
+										
+										
+										<br/>
+										<h:form   enctype="multipart/form-data">
+											<div  class="up_sec">
+											<br/>
+											<p:outputLabel  value="Upload Section"    />
+												<hr/>
+											<br/>
+										      <h:inputText     class="price"      value="#{upload_cat.w1}"   autocomplete="off">
+										    	<f:passThroughAttribute name="placeholder"    value="Write Up"/>
+										    	</h:inputText>
+										    	<br/><br/>
+										     	<h:inputText     class="price"     value="#{upload_cat.w2}"  autocomplete="off">
+										     	<f:passThroughAttribute name="placeholder"    value="Price"/>
+										     	</h:inputText>
+										     	
+										     	
+												<br/><br/><br/>
+					                             <p:growl id="oi" showDetail="true"   life="2500"/>
+					                             <h:selectOneMenu value="#{upload_cat.rols}"    class="select">
+					                                     <f:selectItem itemValue="#{upload_cat.a0}" itemLabel="#{upload_cat.a0}"/>
+					                                     <f:selectItem itemValue="#{upload_cat.a1}" itemLabel="#{upload_cat.a1}"/>
+					                                     <f:selectItem itemValue="#{upload_cat.a2}" itemLabel="#{upload_cat.a2}"/>
+					                                     <f:selectItem itemValue="#{upload_cat.a3}" itemLabel="#{upload_cat.a3}"/>
+					                                     <f:selectItem itemValue="#{upload_cat.a4}" itemLabel="#{upload_cat.a4}"/>
+					                                     <f:selectItem itemValue="#{upload_cat.a5}" itemLabel="#{upload_cat.a5}"/>      
+					                                     <f:ajax event="blur" listener="#{upload_cat.read()}" render="oi"/>
+					                           </h:selectOneMenu>    
+                       
+                        
+                        
+										     	<br/><br/>
+										     	<p:fileUpload   mode="simple"    class="pics"     value="#{upload_cat.file}"    allowTypes="/(\.|\/)(gif|jpe?g|png)$/"   fileLimit="2048"    fileLimitMessage="Select Fill Exceeds Limit (2MB)"/>
+										     	<br/>	<br/>	
+										     	<h:commandButton    value="Upload"    class="upload-so"    action="#{upload_cat.send_in}"/>
+												<br/><br/>
+												<h:commandButton    value="Edit Post"    class="upload-so"    action="#{upload_cat.editing}"/>
+											
+														<br/><br/><br/>
+														<p:outputLabel  value="Category =>  #{upload_cat.category}"  class="jats"   />
+											
+											</div>
+									</h:form>
+											
+											
+											
+											
+											
+											
+		<div  class="view_order">
+				<h:form  id="views">
+								<br/>
+								<p:outputLabel  value="Order Section"/>
+							 	<hr/>
+								<br/>
+								
+								
+					 <div id="style-2" class="Tcrollbar">
+                           	<div class="Torce-overflow">
+						<ui:repeat var="vex"    value="#{downloadSsec.list1}">
+
+								<br/>
+									<br/>
+									    <center>
+											    <div   class="boxes">
+											    				<h:inputHidden  value="#{vex.id}"/>
+														 	 	<h:inputHidden  value="#{downloadSsec.price}"/>
+														 	 	<h:inputHidden  value="#{vex.user_session_id}"/>
+														    	<h:outputLabel  value="Phone no: #{vex.price}"/>
+																<br/><br/>
+														   	<p:outputLabel     value="Client New Order" />
+														   	<br/><br/>
+														   	<h:commandButton  id="xd"   value="View Order"   action="#{downloadSsec.request_view1}"   class="upload-so">
+														   	
+														   	<f:param  name="usered"  value="#{vex.user_session_id}"/>
+														   	<f:param  name="eds"   value="#{vex.id}"/>	
+														   	</h:commandButton>
+														<br/><br/><br/>
+										    	</div>
+										   </center>
+										  
+								</ui:repeat>
+					    </div>
+					</div>
+			</h:form>
+	</div>
+											
+							
+									
+								</div>	
+							
+						</div>
+						</div>
+						
+					
+</h:body>
+</html>

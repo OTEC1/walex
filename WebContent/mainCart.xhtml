@@ -1,0 +1,626 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+  <meta name="robots" content="index, follow" />
+   <meta name="description" content="Lace , velvet , Squence  fabrics"/>
+  
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>WalexFabrics</title>
+	<link rel="icon" href="image/back.jpg" sizes="40x40" type="image/png"/>
+	
+	     <link href="css/bootstrap.min.css" rel="stylesheet"/>
+         <link href="css/bootstrap-theme.min.css" rel="stylesheet"/>
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+           crossorigin="anonymous"/>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"/>
+       <script src="js/jquery-2.1.1.min.js"/>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+     <script src="js/bootstrap. min.js"></script>
+     <script src="https://kit.fontawesome.com/yourcode.js"></script>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"/>
+    
+    
+     <!-- Sweet Alert -->
+    <script  type="text/javascript"  src="folder1/bootstrap.js"/>
+        <script  type="text/javascript"  src="folder1/bootstrap.min.js"/>     
+        <script src="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.min.js"/>
+        <link rel="stylesheet" type="text/css" href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css"/>
+	<style>
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+.header {
+	background-color: white;
+	position: fixed;
+	width: 100%;
+	height: 70px;
+	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.10);
+}
+
+.header-content {
+	float: right;
+	right: 50px;
+	margin-top: -30px;
+}
+
+.nav-link {
+	font-size: 20px;
+	font-family: lucida Fax;
+	font-weight: 500;
+	text-align: center;
+	align-content: center;
+	color: orange;
+	margin: 20px;
+}
+
+.nav-link:hover {
+	text-decoration: none;
+	color: blue;
+}
+
+.load {
+	position: fixed;
+	height: 100px;
+	width: 100px;
+	margin-top: 25%;
+	opacity: 100%;
+	margin-left: 40%;
+	transfrom: translate(-50px, -50px)
+}
+
+h1 {
+	text-transform: uppercase;
+	color: orange;
+	font-family: lucida fax;
+	font-weight: 600;
+}
+
+.feat {
+	position: relative;
+	top: 120px;
+	width: 100%;
+	display: block;
+}
+
+.counting {
+	width: 350px;
+	display: inline-block;
+	height: 200px;
+	margin-left: 900px;
+	border: 2px inset orange;
+	position: fixed;
+	float: left;
+	margin-top: 50px;
+	background-color: white;
+	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.10);
+}
+
+.card {
+	width: 60%;
+	height: fit-content;
+	background-color: #F7F6F9;
+	display: inline-block;
+	margin: 10px;
+	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.10);
+}
+
+.card-content {
+	width: 400px;
+	height: fit-content;
+	display: inline-block;
+}
+
+.text {
+	margin: 5px;
+	padding: 5px;
+	font-family: Lucida fax;
+}
+
+.button {
+	margin: 10px;
+	background-color: red;
+	color: #ffffff;
+	font-family: lucida fax;
+}
+
+.but {
+	margin: 10px;
+	background-color: orange;
+	color: #ffffff;
+	font-family: lucida fax;
+}
+
+.label {
+	font-size: 15px;
+	font-family: lucida fax;
+	margin-top: 10px;
+}
+
+.fa-whatsapp {
+	color: green;
+}
+
+.fa-facebook-official {
+	color: blue;
+}
+
+.fa-envelope-o {
+	color: red;
+}
+
+.fa-instagram {
+	color: red;
+}
+
+.price {
+	font-size: 14px;
+	color: blue;
+}
+
+.pid {
+	width: 100%;
+	height: 100vh;
+	display: none;
+	position: fixed;
+	opacity: 100%;
+	z-index: 2;
+}
+
+.pid .submitBtn {
+	margin: 0 auto;
+	max-width: 700px;
+	height: 520px;
+	background-color: #ccc;
+	border-radius: 3px;
+	margin-top:-30px;
+}
+
+h2 {
+	text-align: center;
+	padding: 5px;
+	font-weight: 600;
+	color: red;
+	font-family: "Didact Gothic", sans-serif;
+}
+
+hr {
+	font-weight: 600;
+}
+
+.label {
+	margin-bottom: -3px;
+	float: left;
+	color: #000;
+	display: block;
+}
+
+.input {
+	width: 95%;
+	margin-bottom: -2px;
+	margin-left: 3px;
+	padding: 3px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+}
+
+.btn3 {
+	background-color: red;
+	color: white;
+	padding: 12px;
+	border: none;
+	width: 95%;
+	margin-left: 10px;
+	margin-top: 10px;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 17px;
+	font-family: lucida Fax;
+}
+
+.btn3:hover {
+	background-color: #150BAB;
+	color: #ffffff;
+}
+
+.footer {
+	width: 100%;
+	height: 30%;
+	background-color: #030117;
+	margin-top: 550px;
+	position: absolute;
+}
+
+h4 {
+	color: white;
+	font-size: 20px;
+}
+
+.bb {
+	padding: 10px;
+	color: gray;
+	text-align: center;
+}
+
+ul li {
+	color: orange;
+	text-decoration: none;
+	list-style: none;
+}
+
+.fa-whatsapp {
+	color: green;
+}
+
+.fa-facebook-official {
+	color: blue;
+}
+
+.fa-envelope-o {
+	color: red;
+}
+
+.fa-instagram {
+	color: red;
+}
+.exit{
+  float: right;
+  margin-right: 40px;
+  margin-top:-35px;
+  color: red;
+  text-transform: uppercase;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+        a{
+        color: orange;
+        }
+        
+        
+        
+        @media (max-width:980px) {
+	
+	
+	
+			.feat {
+			position: relative;
+			top: 350px;
+			width: 100%;
+			display: block;
+		}
+		
+		
+			.counting {
+			width: 90%;
+			display: inline-block;
+			height: 200px;
+			border: 2px inset orange;
+			position: fixed;
+			margin-top: -200px;
+			background-color: white;
+			box-shadow: 0 5px 20px rgba(0, 0, 0, 0.10);
+			margin-left: 5%;
+		}
+		
+		
+	     	.pid {
+			width:100%;
+			height: 100vh;
+			display: none;
+			position: fixed;
+			opacity: 100%;
+			z-index: 2;
+			margin-top: -200px;
+
+		}
+		
+		
+		.pid .submitBtn {
+			margin: 0 auto;
+			max-width: 100%;
+			width:100%;
+			height: 520px;
+			background-color: #ccc;
+			border-radius: 3px;
+			margin-top:-30px;
+			margin-left: 0px;
+		}
+
+		
+
+			.header {
+				background-color: white;
+				position: fixed;
+				width: 100%;
+				height: 100px;
+				box-shadow: 0 5px 20px rgba(0, 0, 0, 0.10);
+			}
+			
+			
+			.header-content {
+				float: left;
+				right: 50px;
+				margin-top: 1px;
+			}
+			
+			.nav-link {
+			font-size: 20px;
+			font-family: lucida Fax;
+			font-weight: 500;
+			float:left;
+			color: orange;
+			margin: 5px;
+		}
+
+		
+		
+					.footer {
+				width: 100%;
+				height: 500px;
+				background-color: #030117;
+				margin-top: 550px;
+				position: absolute;
+			}
+
+
+
+			
+	
+
+
+			}
+</style>
+
+<script>
+
+function sss(){
+	$(".pid").show("fadeinfast");
+}
+function exist(){
+	document.getElementById("submitBtn").style.display="none";
+	
+}
+</script>
+</h:head>
+
+<h:body>
+<h:form>
+
+
+
+
+<div class="header">
+<h1>WalexFabrics</h1>
+<div class="header-content">
+
+<h:commandLink value="Home" action="index.xhtml" class="nav-link"/>
+<h:commandLink value="Shopping site" action="#{streamingCont.shoppAll}" class="nav-link"/>
+</div>
+</div>
+
+
+<div class="feat">
+<ui:repeat var="bv" value="#{streamingCont.submit_tion_list}">
+<div class="pid">
+<div class="submitBtn" id="submitBtn">
+<h2>Complete The Billing Form</h2>
+<h:commandLink value="x"  class="exit" id="exit" onclick="exist()"/>
+<hr/>
+<p:outputLabel for="fname" class="label"><i class="fa fa-user"></i>Full Name:</p:outputLabel>
+<h:inputText id="fname" value="#{submit.fullname}" class="input">
+ <f:passThroughAttribute name="placeholder"  value="John clark"/></h:inputText>
+ 
+<p:outputLabel for="email" class="label"><i class="fa fa-envelope" ></i>Email:</p:outputLabel>
+<h:inputText id="email" value="#{submit.email}" class="input">
+ <f:passThroughAttribute name="placeholder"  value="walexfabrics@gmail.com"/></h:inputText>
+
+
+<p:outputLabel for="adr" class="label"><i class="fa fa-address-card-o" ></i>Address</p:outputLabel>
+<h:inputText id="adr" value="#{submit.address}" class="input">
+ <f:passThroughAttribute name="placeholder"  value="67B Tejuosho yaba road"/></h:inputText>
+ 
+ <p:outputLabel for="num"  class="label"><i class="fa fa-address-card-o"></i>Phone Number</p:outputLabel>
+<h:inputText id="num" value="#{submit.phoneNumber}" class="input">
+ <f:passThroughAttribute name="placeholder"  value="+234"/></h:inputText>
+
+<p:outputLabel for="city" class="label"><i class="fa fa-institution" ></i>City</p:outputLabel>
+<h:inputText id="city" value="#{submit.city}" class="input">
+  <f:passThroughAttribute name="placeholder"  value="Surulere"/></h:inputText>
+  
+  
+  <p:outputLabel for="state" class="label">State</p:outputLabel>
+<h:inputText id="state" value="#{submit.origin}" class="input">
+ <f:passThroughAttribute name="placeholder"  value="Lagos State"/></h:inputText>
+		 <h:commandButton value=" CheckOut" class="btn btn3" action="#{submit.submitCartAll}">
+		<f:param name="ttt" value="#{bv.totalAmount}"/>
+		 <div   class="container"/>
+		</h:commandButton>
+
+
+</div>
+
+
+</div>
+
+<div class="counting">
+
+<div>
+<br/> 
+<label > Total Money:</label>
+
+<p:outputLabel class="price" value="  NGN #{bv.totalAmount}"  id="sw"/>
+
+<br/> 
+<ui:repeat var="ee" value="#{streamingCont.qua}">
+<label > Items No:</label><p:outputLabel value="#{ee.c}" class="itemss" />
+</ui:repeat>
+
+</div>
+<div>
+
+<h:commandButton value="Buy All" class="btn but" id="nn" onclick="sss();">
+<f:ajax render="@this" execute="nn"/>
+</h:commandButton>
+<h:commandButton value="Clear Cart" class="btn button"    action="#{streamingCont.deleteAll}"   id="delPoll">
+</h:commandButton>
+
+</div>
+</div>
+</ui:repeat>
+
+
+
+<div class="container">
+<div class="row">
+<div class="col-sm-12 col-md-12">
+<div  class="load">
+<p:ajaxStatus>
+<f:facet name="start"><p:graphicImage value="image/spinner.gif"  style="width:100px; height:100px" /></f:facet>
+<f:facet name="complete"/>
+</p:ajaxStatus>
+</div></div></div>
+</div>
+
+
+<ui:repeat var="carou" value="#{streamingCont.list1}">
+
+<h:inputHidden  value="#{carou.id}"/>
+<div class="card">
+<p:graphicImage value="#{streamingCont.stream1}" style="width:300px;height:300; border:2px ridden #dddddd;" cache="false">
+   <f:param name="c" value="#{carou.photos}"/>
+</p:graphicImage>
+<div class="card-content">
+<h2><h:outputLabel value="#{carou.itemComment}"/></h2>
+        <i class="fa fa-star"></i> 
+                                <i class="fa fa-star"></i> 
+                                <i class="fa fa-star"></i> 
+                                <i class="fa fa-star"></i> 
+        <i class="fa fa-star-half-o"></i> 
+<h:outputLabel value="#{carou.name}" class="text"/>
+<h:commandButton id="poo" value="delete" class="btn button" action="#{streamingCont.delete}" >
+<f:param name="del"   value="#{carou.id}"/>
+<f:ajax  execute="poo"   render="@form"/>
+</h:commandButton>
+
+<h:outputLabel value="#{carou.price}" class="btn but"/>
+<br/>
+<h:outputLabel value="Quatity : #{carou.itemqua}" class="btn but"/>
+<br/>
+<h:outputLabel value="Total: #{carou.itemtotal}" class="btn but"/>
+</div>
+</div></ui:repeat>
+</div>
+</h:form>
+
+
+
+
+
+
+<section class="footer">
+<div class="container">
+<div class="row">
+<div class="col-md-4">
+<h4>WalexFabrics Address</h4>
+      <div class="footAddress">
+       <ul>
+       <li>Headquarters:<br/> 1st floor 34 Tejuosho st, Surulere Opp access bank</li>
+       </ul>     
+       </div> 
+              <div class="footAddress">
+       <ul>
+       <li>Branch:<br/>  2nd shop C1027 Tejuosho Shopping Complex Yaba</li>
+       </ul>     
+       </div>
+              <div class="footAddress">
+       <ul>
+       <li>3rd shop:<br/>  G-026 Tejuosho phase 2 down stairs spar area</li>
+       </ul>      
+       </div>
+       
+
+
+
+</div>
+
+<div class="col-md-4">
+<h4>Contact Us</h4>
+    <div class="footCom">
+       <ul>
+       <li>NO: + 2348178227171</li>
+       </ul>     
+       </div>
+              <div class="footCom">
+       <ul>
+       <li>NO: +2348060512342</li>
+       </ul>     
+       </div>
+          <div class="footCom">
+       <ul>
+       <li>facebook @walexfabrics</li>
+       </ul>     
+   
+
+       </div>
+</div>
+<div class="col-md-4">
+
+<h4>Follow Us On</h4>
+    <div class="footsocial">
+       <ul>
+       <li><i class="fa fa-facebook-official"></i>
+       
+       <a href="https://www.facebook.com/walexfabrics">
+        @walexfabrics
+        </a>
+        </li>
+       </ul>     
+       </div>
+          <div class="footsocial">
+       <ul>
+       <li><i class="fa fa-snapchat"></i> @walexfabrics</li>
+       </ul>     
+       </div>
+
+              <div class="footsocial">
+       <ul>
+      <li>
+      <i class="fa fa-whatsapp"></i>
+       <p:link  href="https://api.whatsapp.com/send?phone=+2348178227171" >
+      + 2348178227171
+      </p:link>
+      </li>
+       </ul>     
+       </div>
+                 <div class="footsocial">
+       <ul>
+       <li><a href="https://www.instagram.com/walexfabrics/">
+       <i class="fa fa-instagram">
+       </i>@walexfabrics
+       </a></li>
+       </ul>     
+       </div>
+    
+
+</div>
+</div>
+</div>
+</section>
+
+</h:body>
+
+</html>

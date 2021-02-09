@@ -1,0 +1,393 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	  xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+<title>WalaxFabrics</title>
+
+		<link rel="icon" href="image/back.jpg" sizes="40x40" type="image/png"/>
+	
+  <!--Sweet alert-->
+       <script  type="text/javascript"  src="folder1/bootstrap.js"/>
+        <script  type="text/javascript"  src="folder1/bootstrap.min.js"/>     
+        <script src="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css"/>
+        
+        
+        
+        
+<style>
+
+		*{
+		padding: 0px;
+		margin: 0px;
+		}
+		
+		
+		.base{
+		background: #ECECEC;
+		width:100%;
+		text-align: center;
+		}
+		
+		
+		
+		.inner_section{
+		display:inline-block;
+		background: #fff;
+		width:90%;
+		}
+		
+	
+		.view_order{
+			width:90%;
+			height:500px;
+			background:#ECECEC;
+			border-radius: 0px 7px 7px 0px;
+			}
+			
+			.spa{
+		    	margin-left:110px; 
+				}
+			
+	
+			
+		.upload-so{
+				width: 100px;
+				padding: 5px;
+				border:none;
+				border-radius: 5px;
+				margin:10px;
+				color:#fff;
+				background-color: #2ED9EC;
+					
+				}
+
+		.upload-st{
+				width: 100px;
+				padding: 5px;
+				border:none;
+				border-radius: 5px;
+				margin:10px;
+				color:#fff;
+				background-color: red;
+					
+				}
+		.price{
+				width: 250px;
+				height: 10px;
+				border:none;
+				border-radius:10px;
+				padding: 10px;
+			}
+			
+			
+		.select{
+			width: 200px;
+			
+			}			
+			
+			.cats{
+				margin-right:20px;
+				width:130px;
+				float: right;
+				}
+			
+			.pics{
+					width: 140px;
+						
+				}
+			
+		
+	
+    	.top_nav{
+		background: #E59327;
+		width:100%;
+		height: 100px;
+		
+		}
+		
+		.headers{
+			padding:10px;
+			color: #fff;
+			font-size: 40px;
+			background-color: #E59327;
+			border:none;
+			cursor: pointer;
+			}
+
+		.headers1{
+	    	border: 2px solid #000;
+	    	border-radius: 5px;
+	    	margin: 10px;
+			float:right;
+			padding:15px;
+			color: #000;
+			font-size: 15px;
+			}
+
+		.headers2{
+		    height:30px;
+		    width:30px;
+	    	margin: 10px;
+			float:right;
+			padding:15px;
+			color: #000;
+			font-size: 15px;
+			}
+		hr{
+	    	width:70%;
+	    	margin-top:5px;
+	    	margin-left: 15%;
+		}
+		
+		.jats{
+		  padding: 5px;
+		  border: 2px solid #000;
+		  border-radius: 5px;
+			}
+			
+			
+			.boxes{
+			width: 80%;
+			height:300px;
+			align-content:center;
+			background-color:#ECECEC;
+			border-radius: 10px;
+			}
+			
+			.in_size{
+				border:none;
+				margin: 10px;
+				width:60%;
+				padding: 10px;
+				}
+			
+			 
+			 .write{
+			          width:20px; 
+			          overflow:hidden;
+			 		}
+
+.butt{
+ float:right;
+ display: inline-block;
+ 
+} 
+
+ @media(max-width:980px)    { 
+		*{
+		padding: 0px;
+		margin: 0px;
+		}
+		
+		
+		.base{
+		height: 500px;
+		width:100%;
+		height: 1900px;
+		}
+		
+		
+			.headers2{
+		    height:50px;
+		    width:50px;
+	    	margin: 10px;
+			float:right;
+			padding:15px;
+			color: #000;
+			font-size: 15px;
+			}
+			
+		.inner_section{
+		display:inline-block;
+		height: 1700px;
+		width:90%;
+		}
+		
+		
+		
+	
+			
+		.view_order{
+			width:95%;
+			height:475px;
+			background:#ECECEC;
+			border-radius: 0px 7px 7px 0px;
+			margin-left: 10px;
+			}
+			
+		.upload-so{
+				width: 100px;
+				padding: 5px;
+				border:none;
+				border-radius: 5px;
+				color:#fff;
+				background-color: #2ED9EC;
+				
+			}
+
+		.price{
+				width: 250px;
+				height: 10px;
+				border:none;
+				border-radius:10px;
+				padding: 10px;
+			}
+			
+			
+		.select{
+			width: 200px;
+			}			
+			
+			.cats{
+				margin-right:20px;
+				width:130px;
+				float: right;
+				}
+			
+			.pics{
+					width: 140px;
+						
+				}
+
+ 		.top_nav{
+			background: #E59327;
+			height: 100px;
+			}
+			
+				.headers{
+			padding:10px;
+			color: #fff;
+			font-size: 40px;
+			background-color: #E59327;
+			border:none;
+				cursor: pointer;
+			}
+			.headers1{
+			border: 2px solid #000;
+	    	border-radius: 5px;
+	    	margin: 10px;
+			float:right;
+			padding:15px;
+			color: #000;
+			font-size: 15px;
+			}
+			
+			.spa{
+		   	margin-left:2%; 
+			}
+
+.butt{
+margin-right: 100px;
+}
+				 .write{
+				      float:right;
+			          overflow:hidden;
+			          font-size: 25px;
+       		     	 width: 250px;
+       			   
+			 		}
+}
+
+
+
+
+</style>
+</h:head>
+
+<h:body>
+				<div class="top_nav">
+					
+					<h:form>
+					
+						<h:commandButton    class="headers" value="WalexFabrics Control Panel"     action="#{update_sec.home}"/>
+				
+					
+					 <h:commandButton    class="headers2"     image="folder1/user.png"  action="#{downloadSsec.sign_in}"/>
+					 
+					</h:form>
+					</div>
+				
+						<div  class="base">
+								<div   class="inner_section">
+								
+									<h:form  id="views">
+									<p:growl   showDetail="true"/>
+				
+								       <div   class="spa">	
+									           <div  class="view_order"   align="center">
+														<br/>
+															<p:outputLabel  value="Update Section"/>
+															<br/>
+																<div class="container">
+															            <div class="card">
+															                  <div class="card-content">
+															                          <h2></h2>  
+																										<p:dataScroller   var="vex"    value="#{downloadSsec.list5}"   mode="inline"   scrollHeight="1500"  chunkSize="10">
+															
+																											<br/><br/>
+																									             <center>
+																											          <div   class="boxes">
+																														    	<h:outputLabel  value="#{vex.id}"/>	
+																														    	   <h:inputHidden  value="#{vex.img_name}"/>
+																														    	      <h:inputHidden   value="#{vex.writeup}"  />
+																														    	          <br/>
+																														                     	   	<br/>
+																																<p:graphicImage  cache="false"   width="200"  height="200"   value="#{downloadSsec.contents}"   style="float:left; margin-left:40px;">
+																																	<f:param  name="x1"    value="#{vex.img_name}"/>
+																																</p:graphicImage>
+																																
+																													            	<div   class="butt">
+																															
+																																		  
+																																				<br/>
+																												                                       
+																																			      <h:commandButton     value="Update"    action="#{update_sec.update}"   class="upload-so">
+																																				   	   	<f:param  name="x5"   value="#{vex.id}"/>
+																																				   </h:commandButton>	
+																																	   
+																																	   
+																																	   			   <h:commandButton      value="delete"    action="#{update_sec.delete}"   class="upload-st">
+																																	 						     <f:param  name="x7"   value="#{vex.id}"/>
+																																	 						     <f:param  name="x9"    value="#{vex.img_name}"/>
+																																				   </h:commandButton>												    
+																																						   						
+																															              		
+																																		     <table class="tew"   style="float: right: ;" > 
+																																				         <tr>
+																																				         <td>
+																																				          <p:outputLabel   value="Price : #{vex.price}" />
+																																				            <br/>
+																																				          
+																																				         </td>
+																																				         </tr>
+																																				         
+																																				         <tr>
+																																				         <td  >
+																																				         <h:outputLabel  value="Write up:  #{vex.writeup}"  class="write" />
+																																				          <br/> 
+																																				         
+																																				         </td>
+																																				         </tr>
+																																				   </table>
+																																	    	<br/>	
+																																</div>
+																												    	</div>
+																												   </center>
+																									</p:dataScroller>
+																						</div>
+																   			   	</div>
+																   		</div>
+																	    </div>
+																	</div>
+															</h:form>
+													</div>	
+												</div>	
+</h:body>
+</html>
