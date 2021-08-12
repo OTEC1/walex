@@ -107,7 +107,7 @@ PreparedStatement ps=con.prepareStatement("select * from walex_uploads order by 
 ResultSet rs=ps.executeQuery();%>	
 <% while(rs.next()){%>	
 <div class="pic">
-<a href="cart_purchase.jsp?i=<%=rs.getString("id")%>&m=1">
+<a href="cart_purchase.jsp?i=<%=rs.getString("id")%>&m=1&t=0">
 <img alt="<%=rs.getString(5)%>" src="<%=Cre.http+rs.getString(4)%>" id="some" />
 </a>
 <div class="product-bottom text-center">

@@ -9,7 +9,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Insert title here</title>
+<title>Walexfabrics  Categories</title>
 <style>
 
 .open{
@@ -17,18 +17,22 @@ width: 80%;
 height: auto;
 margin-left: auto;
 margin-right: auto;
+text-align: center;
 }
 .pic{
 width: 200px;
-height: 300px;
+height: 270px;
 text-align:center;
-box-shadow:0px 0px 3px 0px rgba(0,0,0,0.4);
+box-shadow: 0px 20px 30px  rgba(0,0,0,0.2);
+border-radius:10px;
 display: inline-block;
+margin: 2px;
 }
 
 #some{
 height: 180px;
 width: 100%;
+
 }
 
 .on-sale{
@@ -62,18 +66,27 @@ color: orange;
 font-size: 10px;
 }
 
+
+
+@media(max-width:790px) {
+
+.pic{
+width: 80%;
+height: 280px;
+}
+	
+}
+
 </style>
    
 </head>
 <body>
-
+<jsp:include page="header_ui.jsp"></jsp:include>
 
 <div class="open">
 
 <%
 String x =request.getParameter("m");
-System.out.println(x);
-
 Connection con= new DatabaseConnection().getConnection();
 PreparedStatement ps=con.prepareStatement("select * from walex_uploads where cats like '%"+x+"%'");
 ResultSet rs=ps.executeQuery();
@@ -102,5 +115,6 @@ while(rs.next()){%>
 
 
 </div>
+<jsp:include page="Footer.jsp"></jsp:include>
 </body>
 </html>

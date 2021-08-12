@@ -37,57 +37,62 @@
 
 <tr>
 <%
+String temp = "";
+if(request.getParameter("s").equals("E"))
+	temp="0.0";
+else
+	temp=String.valueOf(new WalexModel().start_Ses(request).getAttribute("temp_total"));
 		  
 //Get main cart to display   Add empty Space in list and check for two user
 if(new WalexModel().cart_pay(request) != null){
     @SuppressWarnings("unchecked") 
     ArrayList<Map<String, Object>> list=	(ArrayList<Map<String, Object>>) new WalexModel().start_Ses(request).getAttribute("cart");
-for (Map<String, Object> result : list) {%>
-<td>		
-<div class="cart-info">
-<img  src="<%=result.get("image")%>"  style="width: 150px; height: 150px"/>
-<input type="hidden" name="image" value="<%=result.get("image")%>">
-<div>
-<p><%=result.get("item_name")%></p>
-<small>Price:<%=result.get("price")%>
-<input type="hidden" name="price" value="<%=result.get("price")%>"></small>
-<br>
-
-<form action="calculate"   method="post">
-<button value="<%=result.get("id")%>" name="delete" id="button" >delete</button>
-</form>
-</div>
-</div>
-</td>
-
-<td>
-<%=result.get("input")%>
-</td>
-<td>Total:<%=result.get("total")%> 
-<input type="hidden" name="total" value="<%=result.get("total")%>"> 
-</td>
-</tr>
-<%}
-System.out.println(list); 
-}%>
-</table> 
-<br/><br/>
-<div class="total-price">
-<table>
-<tr>
-<td>Sub total</td>
-<td>N ${temp_total}</td>
-</tr>
-<tr>
-<td>Tax</td>
-<td>$0.00</td>
-</tr>
-<tr>
-<td>Total</td>
-<td>N ${temp_total}</td>
-</tr>
-</table>
-</div>
+	for (Map<String, Object> result : list) {%>
+	<td>		
+	<div class="cart-info">
+	<img  src="<%=result.get("image")%>"  style="width: 150px; height: 150px"/>
+	<input type="hidden" name="image" value="<%=result.get("image")%>">
+	<div>
+	<p><%=result.get("item_name")%></p>
+	<small>Price:<%=result.get("price")%>
+	<input type="hidden" name="price" value="<%=result.get("price")%>"></small>
+	<br>
+	
+	<form action="calculate"   method="post">
+	<button value="<%=result.get("id")%>" name="delete" id="button" >delete</button>
+	</form>
+	</div>
+	</div>
+   </td>
+   
+	<td>
+	<%=result.get("input")%>
+	</td>
+	<td>Total:<%=result.get("total")%> 
+	<input type="hidden" name="total" value="<%=result.get("total")%>"> 
+	</td>
+	</tr>
+	<%}
+	System.out.println(list); 
+	}%>
+	</table> 
+	<br/><br/>
+	<div class="total-price">
+	<table>
+	<tr>
+	<td>Sub total</td>
+	<td>N <%=temp%></td>
+	</tr>
+	<tr>
+	<td>Tax</td>
+	<td>N 0.0</td>
+	</tr>
+	<tr>
+	<td>Total</td>
+	<td>N <%=temp%></td>
+	</tr>
+	</table>
+	</div>
 </div>
 
 
@@ -105,6 +110,6 @@ System.out.println(list);
 </center>
 </form>
 
-
+<jsp:include page="Footer.jsp"></jsp:include>
 </body>
 </html>

@@ -35,7 +35,7 @@ public class WalexModel extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
 	private int price,input;
-	private String id,ca,session_id;
+	private String id,ca,session_id,i;
     private	Object carry;
     private ArrayList<Map<String, Object>> second;
     private ArrayList<Map<String, Object>> list ;
@@ -96,7 +96,7 @@ if(request.getParameter("add")!=null) {
      response.getWriter().write(String.valueOf(total));
  }else {
      start_Ses(request).setAttribute("total", total);	
-     request.getRequestDispatcher("cart_purchase.jsp?i="+id+"&m="+input).forward(request, response);
+     request.getRequestDispatcher("cart_purchase.jsp?i="+id+"&m="+input+"&t="+total).forward(request, response);
      }
 }	
 else 
@@ -116,40 +116,36 @@ request.getRequestDispatcher("index.jsp").include(request, response);
 }				
 else
 	if(request.getParameter("viewcart")!=null) {
+		
+		
 		 
-request.getRequestDispatcher("Cart.jsp").forward(request, response);
+request.getRequestDispatcher("Cart.jsp?s="+quick(request)).forward(request, response);
 }
 	else
-		if(request.getParameter("delete")!=null) {
-
-
-						
-					
-@SuppressWarnings("unchecked")
-ArrayList<Map<String,Object>>  delete_member =  (ArrayList<Map<String, Object>>) start_Ses(request).getAttribute("cart");
-//System.out.println(request.getParameter("delete")+" REMOVED");
-  
-  start_Ses(request).setAttribute("cart",null);
-    
-  for (Map<String, Object> result : delete_member) { 			  	  
-	  if(request.getParameter("delete").equals(result.get("id"))) {
-  long a= Long.valueOf(start_Ses(request).getAttribute("temp_total").toString());
-  long  b = Long.valueOf(result.get("total").toString())-a;
-  start_Ses(request).setAttribute("temp_total", String.valueOf(b).replace("-", ""));
-  request.setAttribute("temp_total", String.valueOf(b).replace("-", ""));
-	  
-  }else
-	  if(result.size()>0)
-        Session_cart(members_of_map_list(result.get("id").toString(), result.get("total").toString(), result.get("image").toString(), result.get("input").toString(),result.get("price").toString(),result.get("item_name").toString()),request);
-  
-		  else 
-			  start_Ses(request).setAttribute("temp_total", "");  
+		if(request.getParameter("delete")!=null) {		
+		@SuppressWarnings("unchecked")
+		ArrayList<Map<String,Object>>  delete_member =  (ArrayList<Map<String, Object>>) start_Ses(request).getAttribute("cart");
+		//System.out.println(request.getParameter("delete")+" REMOVED");
 		  
-	  	
-  
-  }		  
-  request.getRequestDispatcher("Cart.jsp").forward(request, response);
-			
+		  start_Ses(request).setAttribute("cart",null);
+		    
+		  for (Map<String, Object> result : delete_member) { 			  	  
+			  if(request.getParameter("delete").equals(result.get("id"))) {
+		  long a= Long.valueOf(start_Ses(request).getAttribute("temp_total").toString());
+		  long  b = Long.valueOf(result.get("total").toString())-a;
+		  start_Ses(request).setAttribute("temp_total", String.valueOf(b).replace("-", ""));
+		  request.setAttribute("temp_total", String.valueOf(b).replace("-", ""));
+			  
+		  }else
+			  if(result.size()>0)
+		        Session_cart(members_of_map_list(result.get("id").toString(), result.get("total").toString(), result.get("image").toString(), result.get("input").toString(),result.get("price").toString(),result.get("item_name").toString()),request);
+		  
+				  else 
+					  start_Ses(request).setAttribute("temp_total", "");    	
+		  
+		  }		  
+		  request.getRequestDispatcher("Cart.jsp?s="+quick(request)).forward(request, response);
+					
 }
 else
 
@@ -169,11 +165,14 @@ else
 			
 	}
  }
-	request.getRequestDispatcher("Cart.jsp").forward(request, response);
+	request.getRequestDispatcher("Cart.jsp?s="+quick(request)).forward(request, response);
 	}		
 }
 
 	
+
+
+
 
 private boolean checker(List<Map<String, Object>> mk, HttpServletRequest request) {
 	
@@ -247,6 +246,17 @@ private void reset(HttpServletRequest request,String c) {
 	start_Ses(request).setAttribute("cart", null);
 	start_Ses(request).setAttribute("temp_total", null);
 	start_Ses(request).invalidate();
+}
+
+
+private String quick(HttpServletRequest request) {
+	@SuppressWarnings("unchecked")
+	ArrayList<Map<String, Object>> list=	(ArrayList<Map<String, Object>>) new WalexModel().start_Ses(request).getAttribute("cart");
+	if(list == null)
+		i="E";
+	else
+		i="F";
+	return i;
 }
 
 

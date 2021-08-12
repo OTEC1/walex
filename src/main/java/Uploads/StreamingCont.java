@@ -1,4 +1,4 @@
-package walexFab;
+package Uploads;
 
 import java.io.ByteArrayInputStream;
 

@@ -17,21 +17,23 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 <link rel="stylesheet" href="css/bootstrap.min.css"/>
 <link rel="stylesheet" href="css/bootstrap.css"/>
-<!-- Latest compiled and minified JavaScript -->
+ <!-- Font -->
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<!-- Latest compiled and minified JavaScript -->	 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
  
 <style type="text/css">
 * {
-	margin: 0px;
-	padding: 0px;
-	box-sizing: border-box;
+margin: 0px;
+padding: 0px;
+box-sizing: border-box;
 }
 
 .background{
-    width:100%;        
-    display: flex;
-	margin-top: -10px;
+width:100%;        
+display: flex;
+margin-top: -10px;
 }
 
 .walexImage{
@@ -49,11 +51,12 @@ border-radius: 20px 0px 20px 0px;
 .Walextext{
 display: inline-block;
 width : 50%;
-font-family: Sitka small;
+font-family: 'Roboto', sans-serif;
 justify-content: space-between;
 padding: 10px;
 padding-top: 150px;
 width: 50%;
+font-size:14px;
 color: orange;
 
 }
@@ -85,12 +88,16 @@ padding: 20px;
 	display: inline-block;
 	height: 300px;
 	width: 100%;
-	align-content: center;
-	align-items: center;
 	text-align: center;
-	justify-content: space-between;
 	margin-top: 100px;
 }
+
+
+.sizing{
+width:400px; 
+height:350px;
+}
+
 
 .new_arrival {
 	margin-right: auto;
@@ -161,20 +168,38 @@ padding: 20px;
 	font-size: 30px;
 }
 
+
+
+
+
  @media(max-width:980px) {
-	.background {
-		display: block;
-	}
-	.walexImage {
-		background-image: url("Images/best1.png");
-		width: 100%;
-		background-size: cover;
-		margin-left: 0px;
-	}
-	.Walextext {
-	margin-top:-100px;
-	width: 100%;
-	}
+.background {
+display: block;
+}
+
+.vid{
+width: 100%;
+height:250px;
+display: flex;
+
+
+}
+
+.sizing{
+width:150px; 
+height:175px;
+}
+
+.walexImage {
+background-image: url("Images/best1.png");
+width: 100%;
+background-size: cover;
+margin-left: 0px;
+}
+.Walextext {
+margin-top:-100px;
+width: 100%;
+}
 }
 </style>
 </head>
@@ -185,21 +210,21 @@ padding: 20px;
 <div class="Walextext">
 <h2  class="M2">Walexfabrics give's you a nice material lace and designs. We make sure to delivery every good's and items you bought to your 
 door steps. Place your Order's  and choose home delivery with your phone number. OR   You can visit
- our shopping center at 1st floor 34 tejuosho st,surulere Opp access bank.</h2>
+ our shopping center at 1st floor 34 tejuosho str, Surulere Opp access bank.</h2>
 <a href="shopall.jsp"><input type="submit" value="Shop" class="submit" ></input></a>
 </div>
 </div>
 
 <div   class="vid">			
-<video    autoplay loop="loop"   muted  class="sizing"    width="400"  height="350"    >    
+<video    autoplay loop="loop"   muted  class="sizing">    
 <SOURCE src="videos/c1.mp4"    type="video/mp4"   />
 </video>
             		           
-<video      autoplay   loop="loop" muted  class="sizing"  width="400"  height="350">    
+<video      autoplay   loop="loop" muted  class="sizing">    
 <SOURCE src="videos/c2.mp4"    type="video/mp4"/>
 </video>
             
-<video      autoplay  loop="loop"  muted  class="sizing"  width="400"  height="350">    
+<video      autoplay  loop="loop"  muted  class="sizing">    
 <SOURCE src="videos/c3.mp4"    type="video/mp4"/>
 </video>
 </div>

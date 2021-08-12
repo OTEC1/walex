@@ -1,9 +1,12 @@
+<%@page import="walexFab.WalexModel"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@page import="server.DatabaseConnection"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.Connection"%>
+<%@page import="java.util.*" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,22 +17,25 @@
       
 
 <link rel="icon" href="image/back.jpg" sizes="40x40" type="image/png"/>
-		 <link href="css/bootstrap.min.css" rel="stylesheet"/>
-		 <link href="css/bootstrap.css" rel="stylesheet"/>
-       <link href="css/bootstrap-theme.min.css" rel="stylesheet"/>      
-                       <!-- fontawesome -->
-       
-       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-           crossorigin="anonymous"/>          
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<link href="css/bootstrap.min.css" rel="stylesheet"/>
+<link href="css/bootstrap.css" rel="stylesheet"/>
+<link href="css/bootstrap-theme.min.css" rel="stylesheet"/>      
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"> </script>
-         <script src="js/jquery-2.1.1.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-     <script src="js/bootstrap. min.js"></script>
-     <script src="https://kit.fontawesome.com/yourcode.js"></script>  
+<!-- fontawesome -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+ crossorigin="anonymous"/>  
+ 
+         
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"> </script>
+<script src="js/jquery-2.1.1.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap. min.js"></script>
+<script src="https://kit.fontawesome.com/yourcode.js"></script>  
      
+
      
 <style type="text/css">
 
@@ -76,7 +82,19 @@ ResultSet rs=ps.executeQuery();%>
 <%} %>
 </div>
 <div class="navbar-nav">
-<a class="nav-item nav-link" href="Cart.jsp?x=0000"><i class="fa fa-shopping-basket"></i></a>
+<a class="nav-item nav-link" 
+href="<% 
+ArrayList<Map<String, Object>> list=	(ArrayList<Map<String, Object>>) new WalexModel().start_Ses(request).getAttribute("cart");
+if(list==null ){%>
+	Cart.jsp?x=0000&s=E
+<% 
+}else{%>
+	Cart.jsp?x=0000&s=F
+<%}
+System.out.println(list);
+%>">
+<i class="fa fa-shopping-basket"></i>
+</a>
 </div>
 </div>
 </div>

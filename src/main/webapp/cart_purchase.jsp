@@ -89,6 +89,7 @@ $(document).ready(function(){
 <%
 
 String x =request.getParameter("i");
+Long l =Long.valueOf(request.getParameter("t").toString());
 Connection con= new DatabaseConnection().getConnection();
 PreparedStatement ps=con.prepareStatement("select * from walex_uploads where id ="+Integer.valueOf(x));
 ResultSet rs=ps.executeQuery();
@@ -106,9 +107,10 @@ rs.getString(4)%>" class="image" >
 <i class="fa fa-star"></i> 
 <i class="fa fa-star-o"></i>
 <i class="fa fa-star-half-o"></i> 
-<form action="calculate" method="post" id="calculate" >
+
+<form action="calculate" method="post" id="calculate">
 <p class="price" >NGN<input value="<%=rs.getString("price")%>"name="price" style="border: none;width:100px;"></input><label>&nbsp;Per yard</label></p>
-<p class="total">Total:<input id="result" style="border:none;width:100px;" value="${total}" readonly="true"/>
+<p class="total">Total:<input id="result" style="border:none;width:100px;" value="<%= (l!=0)?l:0%>" readonly="true"/>
 
 <input name="totals"  type="hidden"   value="<%=request.getAttribute("total")%>"/></p>
 <input type="hidden" readonly="true"    value="Images/<%=rs.getString(4)%>" name="image"/>

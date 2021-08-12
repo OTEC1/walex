@@ -31,12 +31,13 @@ width: 200px;
 height: 250px;
 margin-top:20px;
 display: inline-block;
-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.1);
+box-shadow: 0px 20px 30px  rgba(0,0,0,0.2);
+border-radius:10px;
 }
 
 #some{
 height: 150px;
-width: 150px;
+width: 100%;
 }
 
 .on-sale{
@@ -78,7 +79,16 @@ font-size: 10px;
 marquee{
 color: red;
 font-family: sans-serif;
-    }
+}
+
+@media(max-width:790px) {
+
+.pic{
+width: 80%;
+height: 280px;
+}
+	
+}
 
 </style>
 </head>
@@ -96,7 +106,7 @@ PreparedStatement ps=con.prepareStatement("select * from walex_uploads order by 
 ResultSet rs=ps.executeQuery();%>	
 <% while(rs.next()){%>	
 <div class="pic">
-<a href="cart_purchase.jsp?i=<%=rs.getString("id")%>&m=1">
+<a href="cart_purchase.jsp?i=<%=rs.getString("id")%>&m=1&t=0">
 <img alt="" src="Images/<%=rs.getString(4)%>" id="some" />
 </a>
 <div class="product-bottom text-center">
